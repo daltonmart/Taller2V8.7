@@ -77,6 +77,7 @@ public class PUsuariosDelJuego implements IPUsuariosDelJuego{
         }
     }
     
+    @Override
     public void borrarUsuarioDePersistenciaUsuarioJuego(String nickname)  {
         try {
             File inputFile = new File("UsuariosDelJuego.txt");
@@ -84,18 +85,14 @@ public class PUsuariosDelJuego implements IPUsuariosDelJuego{
             
             boolean successful = inputFile.renameTo(tempFile);
             
-            BufferedReader reader = null;
-            try {
+            BufferedReader reader;
+            
                 reader = new BufferedReader(new FileReader(tempFile));
-            } catch (FileNotFoundException ex) {
-                Logger.getLogger(PUsuariosDelJuego.class.getName()).log(Level.SEVERE, null, ex);
-            }
-            BufferedWriter writer = null;
-            try {
+            
+            BufferedWriter writer;
+            
                 writer = new BufferedWriter(new FileWriter(inputFile));
-            } catch (IOException ex) {
-                Logger.getLogger(PUsuariosDelJuego.class.getName()).log(Level.SEVERE, null, ex);
-            }
+            
             
             String lineToRemove = nickname;
             String currentLine;

@@ -2,6 +2,8 @@
 package logica;
 
 import java.util.ArrayList;
+import persistencia.PHistoria;
+import persistencia.interfaces.IPHistoria;
 
 public class Historia {
     private ArrayList<Campania> listaCampanias;
@@ -62,6 +64,14 @@ public class Historia {
         
     }
     
+    public void insertarDataMisionACampania(int nroCampania, DataMision m){
+        
+        Campania c= listaCampanias.get(nroCampania);
+        c.insertarMision(m);
+     
+        
+    }
+    
     public String obtenerPistaDeCampania(int nroCampania, int progreso){
         return obtenerCampania(nroCampania).obtenerMision(progreso).getPista();
     }
@@ -75,6 +85,11 @@ public class Historia {
         return camp.obtenerMision(progreso).getComando();
     }
 
+    
+    public void cargarPersistenciaHistoria() {
+        IPHistoria pHistoria = new PHistoria();
+        pHistoria.verPersistenciaHistoria(this);
+    }
   
     
     @Override

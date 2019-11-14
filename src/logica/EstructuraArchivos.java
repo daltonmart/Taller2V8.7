@@ -172,9 +172,7 @@ public class EstructuraArchivos {
         return "EstructuraArchivos{" + "listaArchivos=" + listaArchivos + ", archActual=" + archActual + '}';
     }
 
-    
-    
-    
+   
     public ArrayList<DataArchivo> getArchivos(String url) {
         ArrayList<DataArchivo> ArchivosUrl = new ArrayList<DataArchivo>();
 
@@ -183,20 +181,6 @@ public class EstructuraArchivos {
         }
         for (DataArchivo arch : listaArchivos) {
             if (url.equals(arch.getDireccion())) {
-                ArchivosUrl.add(arch);
-            }
-        }
-        return ArchivosUrl;
-    }
-    
-     public ArrayList<DataArchivo> getArchivosRama(String url) {
-        ArrayList<DataArchivo> ArchivosUrl = new ArrayList<DataArchivo>();
-
-        if (url.lastIndexOf("/") != url.length() - 1) {
-            url = url + "/";
-        }
-        for (DataArchivo arch : listaArchivos) {
-            if (arch.getDireccion().contains(url)) {
                 ArchivosUrl.add(arch);
             }
         }

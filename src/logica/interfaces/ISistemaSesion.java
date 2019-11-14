@@ -6,6 +6,7 @@ import logica.UsuariosDelJuego;
 
 
 public interface ISistemaSesion {
+    
     public UsuariosDelJuego getUsuariosDeJuego(); 
     
     public void setUsuariosDeJuego(UsuariosDelJuego usuariosDeJuego);

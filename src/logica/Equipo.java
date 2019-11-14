@@ -6,7 +6,7 @@ import java.util.ArrayList;
 public class Equipo {
     
     private DataEquipo dEquipo;
-    private ArrayList<Proceso> compuestoPorProcesos;
+    private Procesos compuestoPorProcesos;
     private UsuariosSesion compuestoPorUsuarios;
     
     //private ArrayList<BaseDeDatos> compuestoPorBDD;
@@ -14,7 +14,7 @@ public class Equipo {
     public Equipo() {
         this.dEquipo = new DataEquipo();
         
-        this.compuestoPorProcesos = new ArrayList<> ();
+        this.compuestoPorProcesos = new Procesos();
         this.compuestoPorUsuarios = new UsuariosSesion();
         //this.compuestoPorBDD = new ArrayList<> ();
     }
@@ -22,7 +22,7 @@ public class Equipo {
     public Equipo(String nombre, String ip, Boolean servidor, String informacion) {
         this.dEquipo= new DataEquipo(nombre, ip, servidor, informacion);
         
-        this.compuestoPorProcesos = new ArrayList<> ();
+        this.compuestoPorProcesos = new Procesos();
         this.compuestoPorUsuarios = new UsuariosSesion();
         //this.compuestoPorBDD = new ArrayList<> ();
     }
@@ -35,11 +35,11 @@ public class Equipo {
         this.dEquipo = dEquipo;
     }
 
-    public ArrayList<Proceso> getCompuestoPorProcesos() {
+    public Procesos getCompuestoPorProcesos() {
         return compuestoPorProcesos;
     }
 
-    public void setCompuestoPorProcesos(ArrayList<Proceso> compuestoPorProcesos) {
+    public void setCompuestoPorProcesos(Procesos compuestoPorProcesos) {
         this.compuestoPorProcesos = compuestoPorProcesos;
     }
 

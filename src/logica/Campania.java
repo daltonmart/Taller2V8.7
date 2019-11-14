@@ -2,6 +2,8 @@
 package logica;
 
 import java.util.ArrayList;
+import persistencia.PCampania;
+import persistencia.interfaces.IPCampania;
 
 public class Campania {
     //private int progreso;
@@ -47,6 +49,12 @@ public class Campania {
         return listaMisiones.isEmpty();
     }
 
+    
+     public void cargarPersistenciaCampania(String nombreArchivo) {
+        IPCampania pCampania = new PCampania();
+        pCampania.verPersistenciaCampania(this, nombreArchivo);
+    }
+     
     @Override
     public String toString() {
         return "Campania{" + "listaMisiones=" + listaMisiones + '}';

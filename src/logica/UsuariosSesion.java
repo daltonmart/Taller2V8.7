@@ -3,6 +3,7 @@
 package logica;
 
 import java.util.ArrayList;
+import persistencia.PHistoria;
 import persistencia.PUsuariosSesion;
 import persistencia.interfaces.IPUsuariosSesion;
 

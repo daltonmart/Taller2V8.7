@@ -10,6 +10,11 @@ public class ps extends Comando{
         
     }
     
+    public ps(String argumentos){
+        
+        super(argumentos);
+    }
+    
     private String DatosProcesosToString(Equipo equipo){
         
         String aux = "";
@@ -18,20 +23,19 @@ public class ps extends Comando{
         
         UsuarioSesion usuario = equipo.getCompuestoPorUsuarios().buscarUsuarioConectado();
         
-        aux += usuario.getdUsrSesion().getNombre() + "\t";
+        for(int i = 0; i < equipo.getCompuestoPorProcesos().getListaDeProcesos().size(); i++){
         
-        for(int i = 0; i < equipo.getCompuestoPorProcesos().size(); i++){
-        
-            aux += equipo.getCompuestoPorProcesos().get(i).getPID() + "\t";
-            aux += equipo.getCompuestoPorProcesos().get(i).getPPID() + "\t";
+            aux += equipo.getCompuestoPorProcesos().getListaDeProcesos().get(i).getUsuario() + "\t";
+            aux += equipo.getCompuestoPorProcesos().getListaDeProcesos().get(i).getPID() + "\t";
+            aux += equipo.getCompuestoPorProcesos().getListaDeProcesos().get(i).getPPID() + "\t";
             
-            if(equipo.getCompuestoPorProcesos().get(i).getActivo()){
+            if(equipo.getCompuestoPorProcesos().getListaDeProcesos().get(i).getActivo()){
                 aux += "active\t";
             } else {
                 aux += "inactive\t";
             }
             
-            aux += equipo.getCompuestoPorProcesos().get(i).getNombre() + "\n";
+            aux += equipo.getCompuestoPorProcesos().getListaDeProcesos().get(i).getNombre() + "\n";
             
         }
         

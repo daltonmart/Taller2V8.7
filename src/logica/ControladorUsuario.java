@@ -74,7 +74,9 @@ public class ControladorUsuario implements ISistemaUsuario {
         }
     }
 
-    
+    public void escribirPersistenciaUsuarioJuego(String nickname, String email, String contrasenia, int nroCampania, int progreso){
+        usuariosDelJuego.escribirPersistenciaUsuariosDelJuego(nickname, email, contrasenia, nroCampania, progreso);
+    }
     
     
 }

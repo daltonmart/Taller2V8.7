@@ -24,9 +24,9 @@ public class ISistemaPrincipalImpl implements ISistemaPrincipal {
     
     @Override
     public void cargarHistoria(){
-        historia.generarCampanias(4);
-        historia.insertarMisionACampania(1,"Debes ingresar cat nombre archivo","Ver contenido del archivo llamdo peligro ", "cat peligro");
-        
+        //historia.generarCampanias(4);
+        //historia.insertarMisionACampania(1,"Debes ingresar cat nombre archivo","Ver contenido del archivo llamdo peligro ", "cat peligro");
+        historia.cargarPersistenciaHistoria();
         System.out.println("Cargando Historia...");
         System.out.println(historia);
     }
@@ -106,7 +106,16 @@ public class ISistemaPrincipalImpl implements ISistemaPrincipal {
         iUsuario.bajaUsuario(nickname);
     }
     
+    public void escribirPersistenciaUsuarioJuego(String nickname, String email, String contrasenia, int nroCampania, int progreso){
+        iUsuario.escribirPersistenciaUsuarioJuego(nickname, email, contrasenia, nroCampania, progreso);
+    }
+    
     //ControladorJuegoHistoria
+    @Override
+    public void sonido(String archivo){
+        iJuego.sonido(archivo);
+    }
+    
     @Override
     public String obtenerHistoriaUsuarioSesion(){
         return iJuego.obtenerHistoriaUsuarioSesion();

@@ -56,11 +56,20 @@ public class UsuariosDelJuego {
         listaUsuarios.remove(u);
     }
 
+    public void escribirPersistenciaUsuariosDelJuego(String nickname,String email, String contrasenia, int nroCampania, int progreso){
+        IPUsuariosDelJuego pUsuariosDelJuego = new PUsuariosDelJuego();
+        pUsuariosDelJuego.escribirPersistenciaUsuarioJuego(nickname,email, contrasenia,nroCampania, progreso);
+    }
+    
     public void cargarPersistenciaUsuariosDelJuego(){
         IPUsuariosDelJuego pUsuariosDelJuego = new PUsuariosDelJuego();
         pUsuariosDelJuego.verPersistenciaUsuarioJuego(this);
     }
     
+    public void borrarPersistenciaUsuariosDelJuego(String nickname){
+        IPUsuariosDelJuego pUsuariosDelJuego = new PUsuariosDelJuego();
+        pUsuariosDelJuego.borrarUsuarioDePersistenciaUsuarioJuego(nickname);
+    }
     @Override
     public String toString() {
         return "UsuariosDelJuego{" + "listaUsuarios=" + listaUsuarios + '}';

@@ -82,7 +82,7 @@ public class mkdir extends Comando {
 
     @Override
     public String ejecutarComando() {
-        String nombre;
+        String nombre,dir;
         DataArchivo a;
         UsuarioSesion ua = red.getEquipoActual().getCompuestoPorUsuarios().buscarUsuarioConectado();
         EstructuraArchivos eArch=ua.getCompuestoPorArchivos();
@@ -101,7 +101,13 @@ public class mkdir extends Comando {
         else
         {
             a = eArch.getArchActual();//para cuando es relativa
-            eArch.altaArchivo(nombre,0,a.getDireccion() , a.getPermiso() , ua.getdUsrSesion().getNombre() , "G"+ua.getdUsrSesion().getNombre(), "null", 0, fechayhora);
+            if (a.getNombre().equals("/"))//es el directorio raiz
+                dir = a.getNombre();
+            else
+                dir = a.getDireccion()+a.getNombre()+"/";
+            System.out.println(dir);
+            eArch.altaArchivo(nombre,0, dir , a.getPermiso() , ua.getdUsrSesion().getNombre() , "G"+ua.getdUsrSesion().getNombre(), "null", 0, fechayhora);
+            System.out.println(eArch);
         }
         return "";
         

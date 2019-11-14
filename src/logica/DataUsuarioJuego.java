@@ -9,8 +9,8 @@ public class DataUsuarioJuego {
     private int progreso;
         
     public DataUsuarioJuego(){
-        progreso=0;
-        nroCampania=1;
+        //progreso=0;
+        //nroCampania=1;
     }
 
     public DataUsuarioJuego(String nickname, String email, String contrasenia, int nroCampania, int progreso) {

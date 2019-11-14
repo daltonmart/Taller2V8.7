@@ -2,6 +2,7 @@
 package logica.interfaces;
 
 public interface ISistemaJuegoHistoria {
+    public void sonido(String archivo);
     public String obtenerHistoriaUsuarioSesion();
     public String manejoComandoDeITerminal(String lineaTextoIngresada);
     public void avanceMision();

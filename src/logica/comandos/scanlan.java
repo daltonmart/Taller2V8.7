@@ -22,9 +22,9 @@ public class scanlan extends Comando{
         aux += equipo.getdEquipo().getIp() + "\t";
         
         if(equipo.getdEquipo().esServidor()){
-            aux += "SERVIDOR\t";
+            aux += "PC\t";
         } else {
-            aux += "PC\t\t";
+            aux += "Servidor\t\t";
         }
         
         aux += equipo.getdEquipo().getNombre() + "\n\n";

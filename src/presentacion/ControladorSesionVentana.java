@@ -7,6 +7,7 @@ import logica.ControladorSesion;
 import static logica.ISistemaPrincipalImpl.iSesion;
 import static logica.ISistemaPrincipalImpl.usuariosDelJuego;
 import logica.interfaces.ISistemaSesion;
+import static presentacion.Principal.iPrincipal;
 
 public class ControladorSesionVentana extends javax.swing.JFrame {
 
@@ -159,9 +160,19 @@ public class ControladorSesionVentana extends javax.swing.JFrame {
                 if (result==0){
                     iSesion.setNroCampania(nroCampaniaElegidoInterfaz);
                     //abre terminal
-                    JuegoHistoria term=new JuegoHistoria();
-                    this.setVisible(false);
-                    term.setVisible(true);
+                    
+                    
+                    if (iSesion.getNroCampania()==1){
+                        InicioHistoriaCampania1 his= new InicioHistoriaCampania1();
+                        this.setVisible(false);
+                        his.setVisible(true);
+                        iPrincipal.sonido("1");
+                    }
+                    else{
+                        JuegoHistoria term=new JuegoHistoria();
+                        this.setVisible(false);
+                        term.setVisible(true);
+                    }
                 }
                 else{
                     this.setVisible(false);
@@ -172,9 +183,17 @@ public class ControladorSesionVentana extends javax.swing.JFrame {
             } 
             else{
                 //eligio la campania en la que estaba
-                JuegoHistoria term=new JuegoHistoria();
-                this.setVisible(false);
-                term.setVisible(true);
+                if (iSesion.getNroCampania()==1){
+                        InicioHistoriaCampania1 his= new InicioHistoriaCampania1();
+                        this.setVisible(false);
+                        his.setVisible(true);
+                        iPrincipal.sonido("1");
+                    }
+                    else{
+                        JuegoHistoria term=new JuegoHistoria();
+                        this.setVisible(false);
+                        term.setVisible(true);
+                    }
             }
             
         }

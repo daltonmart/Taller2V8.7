@@ -10,6 +10,7 @@ public interface ISistemaPrincipal {
     public void cargarUsuariosDelJuego();
     
     //ControladorSesion
+    
     public UsuariosDelJuego getUsuariosDeJuego(); 
     
     public void setUsuariosDeJuego(UsuariosDelJuego usuariosDeJuego);
@@ -34,8 +35,10 @@ public interface ISistemaPrincipal {
     public void setUsaUsuariosDelJuego(UsuariosDelJuego usaUsuariosDelJuego);
     public void altaUsuario(String nickname, String email, String contrasenia);
     public void bajaUsuario(String nickname);
+    public void escribirPersistenciaUsuarioJuego(String nickname, String email, String contrasenia, int nroCampania, int progreso);
     
-    //ControladorJuegoHistoria
+//ControladorJuegoHistoria
+    public void sonido(String archivo);
     
     public String obtenerHistoriaUsuarioSesion();
 

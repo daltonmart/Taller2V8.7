@@ -7,15 +7,17 @@ public class Proceso {
     private int ppid;
     private String nombre;
     private Boolean activo;
+    private String usuario;
 
     public Proceso() {
         
     }
     
-    public Proceso(int pid, int ppid, String nombre, Boolean activo) {
+    public Proceso(int pid, int ppid, String nombre, String usuario, Boolean activo) {
         this.pid = pid;
         this.ppid = ppid;
         this.nombre = nombre;
+        this.usuario = usuario;
         this.activo = activo;
     }
 
@@ -41,6 +43,14 @@ public class Proceso {
     
     public void setNombre(String nombre){
         this.nombre = nombre;
+    }
+    
+    public String getUsuario(){
+        return this.usuario;
+    }
+    
+    public void setUsuario(String usuario){
+        this.usuario = usuario;
     }
 
     public Boolean getActivo() {

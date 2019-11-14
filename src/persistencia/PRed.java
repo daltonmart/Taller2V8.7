@@ -6,6 +6,7 @@ import java.io.File;
 import java.io.FileReader;
 import javax.swing.JOptionPane;
 import logica.Equipo;
+import logica.Procesos;
 import logica.Red;
 import logica.UsuariosSesion;
 
@@ -39,6 +40,18 @@ public class PRed implements IPRed{
                 
                 //Cada equipo levanta sus usuarios en sesion
                 String nombreUsuarios=String.valueOf(e.getdEquipo().getIp());
+                
+                Procesos proces = new Procesos();
+                
+                System.out.println(nombreUsuarios + "Procesos.txt");
+                proces.cargarPersistenciaProcesos(nombreUsuarios + "Procesos.txt");
+                
+
+                //
+                
+                e.setCompuestoPorProcesos(proces);
+                
+                
                 UsuariosSesion  userSesion= new UsuariosSesion();
                 userSesion.cargarPersistenciaUsuariosSesion(nombreUsuarios+"UsuariosSesion.txt");
                 e.setCompuestoPorUsuarios( userSesion);
